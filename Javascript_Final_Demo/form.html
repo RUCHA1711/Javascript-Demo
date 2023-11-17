@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <link rel="stylesheet" href="form.css">
+
+    </head>
+
+    <body>
+        <h1>Personal Details</h1>
+        <div class="container">
+            <form id="demo_form" name="validate_form">
+                <div class="form_input">
+                    <div>
+                        <label for="fname">First Name: </label>
+                    </div>
+                    <div>
+                        <input type="text" id="fname" name="fname" autocomplete="off" placeholder="Enter First Name" maxlength="25" oninput="firstNameValidation()">
+                        <p id="err_fname" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="lname">Last Name: </label>
+                    </div>
+                    <div>
+                        <input type="text" id="lname" name="lname" autocomplete="off" placeholder="Enter Last Name"
+                            maxlength="25" oninput="lastNameValidation()">
+                        <p id="err_lname"  class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="age">Age: </label>
+                    </div>
+                    <div>
+                        <input type="number" id="age" name="age" placeholder="Enter Age" min="1" autocomplete="off" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" oninput="ageValidation()">
+                        <p id="err_age" class="error"> </p>
+                        <!-- oninput="ageValidation()" -->
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="email">Email: </label>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" autocomplete="off" placeholder="Enter Email" oninput="emailValidation()">
+                        <p id="err_email" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="number">Phone Number:</label>
+                    </div>
+                    <div>
+                        <input type="number" id="number" name="number" autocomplete="off" placeholder="Enter Number" min="0" oninput="phoneNumberValidation()">
+                        <p id="err_number" class="error"></p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="address">Address: </Address></label>
+                    </div>
+                    <div>
+                        <input type="text" id="address" name="address" placeholder="Enter Address" autocomplete="off" oninput="addressValidation()">
+                        <!-- <textarea id="address" name="address" row="15" cols="15" placeholder="Enter Address" oninput="addressValidation()"></textarea> -->
+                        <p id="err_address" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="password">Password: </label>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Enter Password" autocomplete="off" oninput="passwordValidation()">
+                        <p id="err_password" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="company">Company: </label>
+                    </div>
+                    <div>
+                        <input type="text" id="company" name="company" placeholder="Enter Company Name" autocomplete="off" oninput="companyValidation()">
+                        <p id="err_company" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="exp">Experience: </label>
+                    </div>
+                    <div>
+                        <input type="number" id="exp" name="exp" placeholder="Enter Experience" min="1" autocomplete="off"  oninput="experienceValidation()">
+                        <p id="err_exp" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="pin_code">Pin code:</label>
+                    </div>
+                    <div>
+                        <input type="number" id="pin_code" name="pin_code" autocomplete="off" placeholder="Enter Pin code"
+                            min="0" autocomplete="off" oninput="pincodeValidation()">
+                        <p id="err_pincode" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="date">Date:</label>
+                    </div>
+                    <div>
+                        <input type="date" id="date" name="date" oninput="dateValidation()">
+                        <p id="err_date" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="gender">Gender:</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" oninput="radioValidation()">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" oninput="radioValidation()">
+                        <label for="female">Female</label>
+                        <p id="err_gender" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="acctype">Account Type:</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="current" value="current" class="box" oninput=" checkBoxValidation()">
+                        <label for="current">Current</label>
+                        <input type="checkbox" id="savings" value="savings" class="box" oninput=" checkBoxValidation()">
+                        <label for="savings">Savings</label>
+                        <input type="checkbox" id="salary" value="salary" class="box" oninput=" checkBoxValidation()">
+                        <label for="salary">Salary</label>
+                        <p id="err_chkbox" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="city">City:</label>
+                    </div>
+                    <div>
+                        <select id="city" oninput="dropDownValidation()">
+                       <option value="">Select</option>
+                        </select>
+                        <p id="err_dropdown" class="error"> </p>
+                    </div>
+                </div>
+
+                <div class="form_input">
+                    <div>
+                        <label for="about">About:</label>
+                    </div>
+                    <div>
+                        <textarea id="about" name="about" row="15" cols="30" placeholder="Write Something About Yourself"></textarea>
+                        <p id="err_txtarea" class="error"></p>
+                    </div>
+                </div>
+
+                <div class="btn">
+                    <button type="submit" form="form1" id="submit_btn" value="submit" onclick="onsubmitForm()">Submit</button>
+                    <button type="button" form="form1"  id="update_btn" value="update" style="display: none;">Update </button>
+                    <button type="button" form="form1" id="reset_btn" value="reset" onclick="resetAll()">Reset</button>
+                    <button type="button" form="form1" id="cancel_btn" value="cancel" onclick="cancelInputFieldsData(index)" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    <table class="table" border="1" cellpadding="10" >
+        <thead id="html-table">
+            <tr >
+                <th style="width: 5%;">ID</th>
+                <th style="width: 5%;">First Name</th>
+                <th style="width: 5%;">Last Name</th>
+                <th style="width: 5%;">Age</th>
+                <th style="width: 5%;">Email</th>
+                <th style="width: 5%;">Phone Number</th>
+                <th style="width: 5%;">Address</th>
+                <th style="width: 5%;">Password</th>
+                <th style="width: 5%;">Company</th>
+                <th style="width: 5%;">Experience</th>
+                <th style="width: 5%;">Pin code</th>
+                <th style="width: 5%;">Date</th>
+                <th style="width: 5%;">Gender</th>
+                <th style="width: 5%;">Account type</th>   
+                <th style="width: 5%;">City</th>
+                <th style="width: 5%;">Delete</th> 
+                <th style="width: 5%;">Edit</th>    
+            </tr>
+        </thead>
+        <tbody id="form-table">
+        </tbody>
+    </table>
+
+        <script src="form.js"></script>
+        <script src="validation.js"></script>
+        <script src="disable_buttons.js"></script>
+    </body>
+    </html>
